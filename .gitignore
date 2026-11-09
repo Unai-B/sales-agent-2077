@@ -41,6 +41,9 @@ original.ipynb
 .DS_Store
 ._*
 
+# Claude Code
+.claude/
+
 # Editors
 .vscode/
 .idea/

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGENTE DE VENTAS // NEON CONSOLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="terminal">
+    <header class="header">
+      <div class="title-block">
+        <h1 class="title glitch" data-text="AGENTE DE VENTAS">AGENTE DE VENTAS</h1>
+        <p class="subtitle">// NEON SALES CONSOLE &mdash; SQLite + OpenRouter</p>
+      </div>
+      <div class="status" id="status">
+        <span class="dot"></span>
+        <span id="status-text">EN L&Iacute;NEA</span>
+      </div>
+    </header>
+
+    <section class="chat" id="chat" aria-live="polite"></section>
+
+    <div class="hints" id="hints">
+      <span class="hints-label">SUGERENCIAS:</span>
+      <button class="chip" data-q="¿Cuál es el top 5 de tiendas por ventas totales?">Top 5 tiendas</button>
+      <button class="chip" data-q="¿Qué producto (SKU) vende más unidades?">SKU más vendido</button>
+      <button class="chip" data-q="¿Cómo evolucionan las ventas por mes?">Ventas por mes</button>
+      <button class="chip" data-q="¿Cuánto aportan las ventas en promoción (On_Promo=1)?">Impacto de promos</button>
+    </div>
+
+    <footer class="input-bar">
+      <div class="cfg-row">
+        <label class="cfg-label" for="model">MODELO</label>
+        <input type="text" id="model" class="model-input" value="deepseek/deepseek-v4.1-flash" spellcheck="false" autocomplete="off">
+        <span class="cfg-note">DB: sales_data.db · solo lectura</span>
+      </div>
+      <div class="input-row">
+        <textarea id="prompt" rows="1" placeholder="Escribe tu consulta de ventas…" spellcheck="false"></textarea>
+        <button id="send" class="send">ENVIAR ▸</button>
+      </div>
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
